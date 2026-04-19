@@ -16,6 +16,7 @@ from django.conf import settings
 from django.contrib.staticfiles.management.commands.runserver import (
     Command as StaticFilesRunserverCommand,
 )
+from django.core.management.base import CommandError
 
 from netcast.network import get_local_ip
 
@@ -118,6 +119,13 @@ class Command(StaticFilesRunserverCommand):
 
     def handle(self, *args: Any, **options: Any) -> None:
         """Resolve LAN IP, patch settings, then delegate to runserver."""
+        if not settings.DEBUG:
+            raise CommandError(
+                "share_local is blocked because DEBUG=False (production mode).\n"
+                "This command is intended for local development only.\n"
+                "Set DEBUG=True in your settings to use it."
+            )
+
         # Determine port — Django passes it as the first positional arg or
         # via options["addrport"].
         if args:

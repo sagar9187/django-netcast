@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-netcast"
-version = "0.1.0"
+version = "0.1.1"
 description = "A zero-config Django command to instantly share your local development server on your Wi-Fi network."
 readme = "README.md"
 license = "MIT"
@@ -46,8 +46,9 @@ dependencies = [
 
 [project.urls]
 Homepage = "https://github.com/sagar9187/django-netcast"
-Repository = "https://github.com/sagar9187/django-netcast"
-Issues = "https://github.com/sagar9187/django-netcast/issues"
+"Source Code" = "https://github.com/sagar9187/django-netcast"
+"Bug Tracker" = "https://github.com/sagar9187/django-netcast/issues"
+Changelog = "https://github.com/sagar9187/django-netcast/releases"
 
 [tool.setuptools.packages.find]
 include = ["netcast*"]
