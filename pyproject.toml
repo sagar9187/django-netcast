@@ -1,0 +1,64 @@
+[build-system]
+requires = ["setuptools>=68.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "django-netcast"
+version = "0.1.0"
+description = "A zero-config Django command to instantly share your local development server on your Wi-Fi network."
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.9"
+authors = [
+    { name = "Sagar Jadhav", email = "jadhavsagar750@gmail.com" },
+]
+keywords = [
+    "django",
+    "lan",
+    "network",
+    "share",
+    "development",
+    "runserver",
+    "wifi",
+    "mobile",
+]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Web Environment",
+    "Framework :: Django",
+    "Framework :: Django :: 4.2",
+    "Framework :: Django :: 5.0",
+    "Framework :: Django :: 5.1",
+    "Intended Audience :: Developers",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Internet :: WWW/HTTP",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+dependencies = [
+    "django>=4.2",
+]
+
+[project.urls]
+Homepage = "https://github.com/sagar9187/django-netcast"
+Repository = "https://github.com/sagar9187/django-netcast"
+Issues = "https://github.com/sagar9187/django-netcast/issues"
+
+[tool.setuptools.packages.find]
+include = ["netcast*"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+DJANGO_SETTINGS_MODULE = "tests.settings"
+
+[tool.ruff]
+target-version = "py39"
+line-length = 99
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "W"]
